@@ -3,27 +3,36 @@
   <head>
     <title>WEB1 - html</title>
     <script>
-    function nightDayHandler(self) {
-      var target = document.querySelector('body');
+    function linkSetColor(color) {
       let aList = document.querySelectorAll('a');
 
+      for (let index=0;index<aList.length;index++) {
+        aList[index].style.color='blue';
+      }
+    }
+    function bodySetColor(color) {
+      document.querySelector('body').style.color=color;
+    }
+    function bodySetBackgroundColor(color) {
+      document.querySelector('body').style.backgroundColor=color;
+    }
+    function nightDayHandler(self) {
+      var target = document.querySelector('body');
+
+
       if(self.value === 'night') {
-        target.style.backgroundColor='black';
-        target.style.color='white';
+        bodySetBackgroundColor('black');
+        bodySetColor('white');
         self.value = 'day';
 
-        for (let index=0;index<aList.length;index++) {
-          aList[index].style.color='powderblue';
-        }
+        linkSetColor('powderblue')
 
       } else {
-        target.style.backgroundColor='white';
-        target.style.color='black';
+        bodySetBackgroundColor('white');
+        bodySetColor('black');
         self.value = 'night';
 
-        for (let index=0;index<aList.length;index++) {
-          aList[index].style.color='blue';
-        }
+        linkSetColor('blue')
       }
     }
     </script>
