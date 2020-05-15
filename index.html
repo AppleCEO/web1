@@ -13,17 +13,18 @@
       document.querySelector('body').style.backgroundColor='white';
       document.querySelector('body').style.color='black';
     ">
-    <input id="night_day" type="button" value="night" onclick="
-      if(document.querySelector('#night_day').value === 'night') {
-        document.querySelector('body').style.backgroundColor='black';
-        document.querySelector('body').style.color='white';
-        document.querySelector('#night_day').value = 'day';
+    <input type="button" value="night" onclick="
+      var target = document.querySelector('body');
+      if(this.value === 'night') {
+        target.style.backgroundColor='black';
+        target.style.color='white';
+        this.value = 'day';
       } else {
-        document.querySelector('body').style.backgroundColor='white';
-        document.querySelector('body').style.color='black';
-        document.querySelector('#night_day').value = 'night';
+        target.style.backgroundColor='white';
+        target.style.color='black';
+        this.value = 'night';
       }
-    ">
+      ">
     <ol>
       <li><a href="1.html">HTML</a></li>
       <li><a href="2.html">CSS</a></li>
@@ -37,5 +38,16 @@
     W3C는 2014년 10월 28일 HTML5 표준안을 확정했다고 발표했다.<br>
     <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" width="100%">
     <p style="margin-top:40px;">이후 2016년 11월 1일 HTML5의 마이너 업데이트 버전인 HTML5.1 표준안을 확정, 2017년 12월 14일 HTML5.2 표준안을 확정했다. HTML5.3 표준안은 현재 작업 초안 단계로 진행 중이다.</p>
+    <input type="button" value="night" onclick="
+      if(this.value === 'night') {
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+        this.value = 'day';
+      } else {
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black';
+        this.value = 'night';
+      }
+      ">
   </body>
 </html>
