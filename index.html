@@ -3,36 +3,40 @@
   <head>
     <title>WEB1 - html</title>
     <script>
-    function linkSetColor(color) {
-      let aList = document.querySelectorAll('a');
+    var Links = {
+      SetColor:function(color) {
+        let aList = document.querySelectorAll('a');
 
-      for (let index=0;index<aList.length;index++) {
-        aList[index].style.color='blue';
+        for (let index=0;index<aList.length;index++) {
+          aList[index].style.color=color;
+        }
       }
     }
-    function bodySetColor(color) {
-      document.querySelector('body').style.color=color;
-    }
-    function bodySetBackgroundColor(color) {
-      document.querySelector('body').style.backgroundColor=color;
+
+    var Body = {
+      SetColor:function (color){
+        document.querySelector('body').style.color=color;
+      },
+      SetBackgroundColor: function(color) {
+        document.querySelector('body').style.backgroundColor=color;
+      }
     }
     function nightDayHandler(self) {
       var target = document.querySelector('body');
 
-
       if(self.value === 'night') {
-        bodySetBackgroundColor('black');
-        bodySetColor('white');
+        Body.SetBackgroundColor('black');
+        Body.SetColor('white');
         self.value = 'day';
 
-        linkSetColor('powderblue')
+        Links.SetColor('powderblue')
 
       } else {
-        bodySetBackgroundColor('white');
-        bodySetColor('black');
+        Body.SetBackgroundColor('white');
+        Body.SetColor('black');
         self.value = 'night';
 
-        linkSetColor('blue')
+        Links.SetColor('blue')
       }
     }
     </script>
